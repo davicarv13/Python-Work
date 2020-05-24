@@ -1,0 +1,41 @@
+1 - Crie uma pasta para seu projeto e entre nela
+
+python -m venv nome_ambiente_virtual
+
+virtualenv nome_ambiente_virtual
+
+Ativar ambiente virtual: source nome_ambiente_virtual/bin/activate
+
+Instalação do pip no ambiente: pip install Django
+
+Criação do Projeto: django-admin.py startproject nome_projeto .
+
+Criação do banco de dados: python manage.py migrate
+
+Ativação do servidor: python manage.py runserver
+
+Para iniciar um app, abra outra janela do terminal e vá até o diretório do projeto.
+Depois digite: source ll_env/bin/activate
+
+python manage.py startapp nome_aplicacao
+
+Adicione classes no módulo models.py
+
+Para ativar modelos, abra settings.py. Na tupla de INSTALLED_APPS adicione, entre aspas simples, o nome do seu app criado anteriormente.
+
+Depois de adicionar um modelo, faça as alterações no banco de dados: python manage.py makemigrations learning_logs
+
+E, por fim, python manage.py migrate
+
+
+--Setando super usuário
+
+python manage.py createsuperuser
+
+Para alterar modelos pela site do admin, adicione-os no arquivo admin.py: 
+from nome_aplicacao.models import Classe
+admin.site.register(Classe)
+
+
+
+

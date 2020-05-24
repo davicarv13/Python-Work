@@ -1,0 +1,7 @@
+Lists
+Tuples
+Class
+Python
+Dictionaries
+Repeating operators
+Conditional operators
