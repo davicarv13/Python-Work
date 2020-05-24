@@ -1,0 +1,33 @@
+{% extends 'tasks/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Login{% endblock %}
+
+{% block content%}
+	<div class='row'>
+		<div class='col-md-4 offset-md-4'>
+			<div class="card auth-card">
+				<div class='card-body'>
+					<h4 class='card-title text-center'>Entrar no To Do List</h4>
+
+					<form method='post'>
+						{% csrf_token %}
+
+						<!-- Quando acessar uma URL que precisa de autenticação
+						se vc não estiver autenticado o Django te redireciona para o login, salvando a url
+						no parametro next
+						se estiver autenticado ele redireciona, ele redireciona para o '/', definido no settings.py  -->
+						<input type='hidden' name='next' value='{{next}}' />
+
+						{{ form|crispy }}
+						<button type='submit' class='btn btn-primary btn-block'>Entrar</button>
+					</form>
+
+					<p class='change-form-p'>Quer criar uma conta? <a href="/accounts/register">Clique aqui!</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+
