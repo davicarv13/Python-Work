@@ -28,3 +28,4 @@ def save_profile(sender, instance, **kwargs):
 
 post_save.connect(save_profile, sender=User)
 
+
